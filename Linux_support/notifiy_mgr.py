@@ -1,6 +1,6 @@
 import time
 import multiprocessing
-from Linux_support import linux_notify
+import linux_notify
 import traceback
 
 def notify_from_queue():
