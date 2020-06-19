@@ -9,7 +9,7 @@ def notify_from_queue():
         try:
             print('started')
             notification = mac_notify.notification_queue.get()
-            mac_notify.notify("Active cases in {}: {}".format(notification['state_name'], notification['state_active']), "Confirmed {} Recovered {}".format(notification['confirmed'], notification['recovered']))
+            mac_notify.notify("Total Active cases in {}: {}".format(notification['state_name'], notification['state_active']), "Confirmed: +{} Recovered: -{}".format(notification['confirmed'], notification['recovered']))
             time.sleep(5)
         except Exception:
             print('Error {}'.format(traceback.format_exc()))
